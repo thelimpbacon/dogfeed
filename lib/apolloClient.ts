@@ -7,6 +7,7 @@ import {
 } from "@apollo/client";
 import merge from "deepmerge";
 import isEqual from "lodash.isequal";
+import { Pagination } from "./Pagination";
 
 export const APOLLO_STATE_PROP_NAME = "__APOLLO_STATE__";
 
@@ -22,7 +23,15 @@ function createApolloClient() {
         "app-id": process.env.NEXT_PUBLIC_GRAPHQL_ID,
       },
     }),
-    cache: new InMemoryCache(),
+    cache: new InMemoryCache({
+      typePolicies: {
+        Query: {
+          fields: {
+            posts: Pagination(),
+          },
+        },
+      },
+    }),
   });
 }
 

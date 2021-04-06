@@ -4,7 +4,7 @@
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
-  @apply w-[80%] my-2 min-h-[10em];
+  @apply w-full md:w-[80%] my-2 min-h-[10em];
 }
 
 .topInfo {

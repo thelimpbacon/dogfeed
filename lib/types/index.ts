@@ -17,3 +17,11 @@ export interface PostType {
   text: string;
   owner: UserType;
 }
+
+export interface PostListType {
+  data: PostType[];
+  limit: number;
+  offset: number;
+  page: number;
+  total: number;
+}
