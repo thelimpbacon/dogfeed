@@ -1,0 +1,37 @@
+.root {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  @apply w-[80%] my-2 min-h-[10em];
+}
+
+.topInfo {
+  border-radius: 10px 10px 0 0;
+  @apply px-2 pt-4 pb-2 bg-white;
+}
+
+.postText {
+  @apply text-sm;
+}
+
+.postText::first-letter {
+  @apply capitalize;
+}
+
+.user::before {
+  content: "@";
+}
+
+.imageContainer {
+}
+
+.bottomInfo {
+  border-radius: 0 0 10px 10px;
+  @apply flex px-2 py-4 bg-white;
+}
+
+.tagPill {
+  @apply px-3 py-1 mx-1 text-xs font-medium text-gray-800 bg-blue-300 shadow-md rounded-xl;
+}

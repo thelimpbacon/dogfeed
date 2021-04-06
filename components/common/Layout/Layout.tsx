@@ -12,7 +12,7 @@ const Layout = ({ children }: Props) => {
     <div className={s.root}>
       <Navbar />
       <section className={s.content}>{children}</section>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
