@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useQuery } from "@apollo/client";
 import { useInView } from "react-intersection-observer";
 import { POSTS } from "@lib/tags";
-import { Post } from "@components/common";
+import { Post, PostPlaceholder } from "@components/common";
 import { PostType } from "@lib/types";
 
 const Feed = () => {
@@ -27,16 +27,22 @@ const Feed = () => {
   }
 
   if (loading) {
-    return <div className="min-h-screen">loading</div>;
+    return (
+      <div className="flex flex-col items-center min-h-screen">
+        <PostPlaceholder />
+        <PostPlaceholder />
+        <PostPlaceholder />
+      </div>
+    );
   }
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center overflow-hidden">
       {data?.posts?.data?.map((post: PostType) => {
         return <Post key={post.id} post={post} />;
       })}
-      <div ref={ref} className="h-[20vh]">
-        Loading more posts...
+      <div ref={ref} className="h-[40vh] w-full flex justify-center">
+        <PostPlaceholder />
       </div>
     </div>
   );

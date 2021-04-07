@@ -1,0 +1,15 @@
+.root {
+  @apply w-full lg:w-[90%] mb-4 min-h-[30rem] bg-gray-300 rounded-lg flex flex-col bg-opacity-60;
+}
+
+.topInfo {
+  @apply px-2 pt-4 pb-2 mb-auto bg-white rounded-t-lg;
+}
+
+.bottomInfo {
+  @apply h-[4rem] bg-white rounded-b-lg mt-auto flex px-2 pt-4 pb-2 items-center;
+}
+
+.tagPill {
+  @apply w-1/3 h-5 bg-gray-400 rounded-xl;
+}

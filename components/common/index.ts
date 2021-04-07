@@ -4,3 +4,4 @@ export { default as Footer } from "./Footer";
 export { default as Post } from "./Post";
 export { default as Avatar } from "./Avatar";
 export { default as UserListPlaceholder } from "./UserListPlaceholder";
+export { default as PostPlaceholder } from "./PostPlaceholder";
