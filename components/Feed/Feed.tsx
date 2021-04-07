@@ -35,7 +35,7 @@ const Feed = () => {
       {data?.posts?.data?.map((post: PostType) => {
         return <Post key={post.id} post={post} />;
       })}
-      <div ref={ref} className="h-[4em]">
+      <div ref={ref} className="h-[20vh]">
         Loading more posts...
       </div>
     </div>
