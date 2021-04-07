@@ -13,6 +13,25 @@ export const USER = gql`
   }
 `;
 
+export const USERS = gql`
+  query getUsers($page: Int!, $limit: Int!) {
+    users(page: $page, limit: $limit) {
+      data {
+        id
+        title
+        firstName
+        lastName
+        email
+        picture
+      }
+      total
+      page
+      limit
+      offset
+    }
+  }
+`;
+
 export const POST = gql`
   query getPost($id: String!) {
     post(id: $id) {

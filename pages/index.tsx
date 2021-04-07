@@ -1,5 +1,6 @@
 import Feed from "@components/Feed";
 import LeftSideBar from "@components/LeftSideBar";
+import RightSideBarUser from "@components/RightSideBarUser";
 
 const Home = () => {
   return (
@@ -12,7 +13,11 @@ const Home = () => {
       <div className="w-full col-span-4 lg:col-span-2">
         <Feed />
       </div>
-      <aside className="sticky hidden h-screen top-20 lg:flex">Right</aside>
+      <aside className="sticky hidden h-screen top-20 lg:flex">
+        <div className="flex-1 px-2">
+          <RightSideBarUser />
+        </div>
+      </aside>
     </div>
   );
 };
