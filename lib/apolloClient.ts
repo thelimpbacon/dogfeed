@@ -28,7 +28,7 @@ function createApolloClient() {
         Query: {
           fields: {
             posts: Pagination(),
-            postsByUser: Pagination(),
+            postsByUser: Pagination(["userId"]), // adding userId as keyArgs to update cache on userID change
           },
         },
       },

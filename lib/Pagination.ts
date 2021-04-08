@@ -9,7 +9,6 @@ export const Pagination = (keyArgs?: any): FieldPolicy => {
     keyArgs: keyArgs,
     merge: (existing: Posts, incoming: Posts, _a: any): Posts => {
       const args: PostsByUserVar = _a.args;
-
       const merged = existing ? existing.data.slice(0) : [];
 
       if (args) {
