@@ -6,3 +6,4 @@ export { default as Avatar } from "./Avatar";
 export { default as UserListPlaceholder } from "./UserListPlaceholder";
 export { default as PostPlaceholder } from "./PostPlaceholder";
 export { default as UserBanner } from "./UserBanner";
+export { default as UserBannerPlaceholder } from "./UserBannerPlaceholder";

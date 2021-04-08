@@ -2,6 +2,7 @@ import { useQuery } from "@apollo/client";
 import { USERFULL, UserFullData, UserVar } from "@lib/tags";
 import { format } from "timeago.js";
 import { Avatar } from "..";
+import UserBannerPlaceholder from "../UserBannerPlaceholder";
 import s from "./UserBanner.module.css";
 
 const UserBanner = ({ userId }: { userId: string }) => {
@@ -10,7 +11,7 @@ const UserBanner = ({ userId }: { userId: string }) => {
   });
 
   if (loading) {
-    return <div>Loading</div>;
+    return <UserBannerPlaceholder />;
   }
 
   return (
