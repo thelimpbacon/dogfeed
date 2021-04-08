@@ -3,20 +3,25 @@ import { PostType } from "@lib/types";
 import { Avatar } from "@components/common";
 import { format } from "timeago.js";
 import s from "./Post.module.css";
+import Link from "next/link";
 
 const Post = ({ post }: { post: PostType }) => {
   return (
     <div className={s.root}>
       <div className={s.topInfo}>
-        <div className="flex items-center mb-2">
-          <Avatar src={post.owner.picture} />
-          <div className="ml-2">
-            <div className="block py-0">
-              {post.owner.firstName} {post.owner.lastName}
+        <Link href={`/user/${post.owner.id}`}>
+          <a>
+            <div className="flex items-center mb-2">
+              <Avatar src={post.owner.picture} />
+              <div className="ml-2">
+                <div className="block py-0">
+                  {post.owner.firstName} {post.owner.lastName}
+                </div>
+                <div className="text-xs">{format(post.publishDate)}</div>
+              </div>
             </div>
-            <div className="text-xs">{format(post.publishDate)}</div>
-          </div>
-        </div>
+          </a>
+        </Link>
         <h5 className={s.postText}>{post.text}</h5>
       </div>
       <div className={s.imageContainer}>

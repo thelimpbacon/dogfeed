@@ -1,5 +1,5 @@
 import { FieldPolicy } from "@apollo/client";
-import { PostListType } from "./types";
+import { Posts, PostsByUserVar, PostsVar } from "@lib/tags";
 
 export const Pagination = (keyArgs?: any): FieldPolicy => {
   if (keyArgs === void 0) {
@@ -7,12 +7,8 @@ export const Pagination = (keyArgs?: any): FieldPolicy => {
   }
   return {
     keyArgs: keyArgs,
-    merge: (
-      existing: PostListType,
-      incoming: PostListType,
-      _a: any
-    ): PostListType => {
-      const args: { page: number; limit: number } = _a.args;
+    merge: (existing: Posts, incoming: Posts, _a: any): Posts => {
+      const args: PostsByUserVar = _a.args;
 
       const merged = existing ? existing.data.slice(0) : [];
 

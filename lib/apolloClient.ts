@@ -28,6 +28,7 @@ function createApolloClient() {
         Query: {
           fields: {
             posts: Pagination(),
+            postsByUser: Pagination(),
           },
         },
       },

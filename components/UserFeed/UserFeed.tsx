@@ -1,16 +1,16 @@
 import { useEffect } from "react";
 import { useQuery } from "@apollo/client";
 import { useInView } from "react-intersection-observer";
-import { POSTS, PostsData, PostsVar } from "@lib/tags";
+import { POSTSBYUSER, PostsByUserVar, PostsByUserData } from "@lib/tags";
 import { Post, PostPlaceholder } from "@components/common";
 
-const Feed = () => {
-  const { data, loading, error, fetchMore } = useQuery<PostsData, PostsVar>(
-    POSTS,
-    {
-      variables: { page: 30, limit: 5 },
-    }
-  );
+const UserFeed = ({ userId }: { userId: string }) => {
+  const { data, loading, error, fetchMore } = useQuery<
+    PostsByUserData,
+    PostsByUserVar
+  >(POSTSBYUSER, {
+    variables: { userId, page: 0, limit: 5 },
+  });
 
   const [ref, inView] = useInView({
     threshold: 0,
@@ -20,7 +20,7 @@ const Feed = () => {
 
   useEffect(() => {
     if (inView) {
-      fetchMore({ variables: { page: data?.posts?.page + 1 } });
+      fetchMore({ variables: { page: data?.postsByUser?.page + 1 } });
     }
   }, [inView]);
 
@@ -40,7 +40,7 @@ const Feed = () => {
 
   return (
     <div className="flex flex-col items-center overflow-hidden">
-      {data?.posts?.data?.map((post) => {
+      {data?.postsByUser?.data?.map((post) => {
         return <Post key={post.id} post={post} />;
       })}
       <div ref={ref} className="h-[40vh] w-full flex justify-center">
@@ -50,4 +50,4 @@ const Feed = () => {
   );
 };
 
-export default Feed;
+export default UserFeed;

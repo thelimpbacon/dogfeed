@@ -7,6 +7,17 @@ export interface UserType {
   picture: string;
 }
 
+export interface UserFullType extends UserType {
+  gender: string;
+  phone: string;
+  location: {
+    city: string;
+    country: string;
+  };
+  registerDate: string;
+  dateOfBirth: string;
+}
+
 export interface PostType {
   id: string;
   image: string;

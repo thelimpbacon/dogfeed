@@ -1,4 +1,5 @@
 import { useQuery } from "@apollo/client";
+import Link from "next/link";
 import { Avatar, UserListPlaceholder } from "@components/common";
 import { USERS, UsersData, UsersVar } from "@lib/tags";
 import s from "./RightSideBarUser.module.css";
@@ -43,9 +44,13 @@ const RightSideBarUser = () => {
                   src={user.picture}
                   alt={user.email}
                 />
-                <span className="flex-1 my-3 ml-2">
-                  {user.firstName} {user.lastName}
-                </span>
+                <Link href={`/user/${user.id}`}>
+                  <a>
+                    <span className="flex-1 my-3 ml-2">
+                      {user.firstName} {user.lastName}
+                    </span>
+                  </a>
+                </Link>
               </li>
             );
           })}

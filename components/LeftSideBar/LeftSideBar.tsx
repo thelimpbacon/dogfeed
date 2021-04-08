@@ -9,7 +9,6 @@ const LeftSideBar = () => {
       <div className={s.user}>
         <Avatar
           className="border-4 rounded-full w-[5rem] h-[5rem] "
-          // src="https://randomuser.me/api/portraits/women/3.jpg"
           src="https://res.cloudinary.com/mount-then-bike-bohol/image/upload/v1617809671/UNADJUSTEDNONRAW_thumb_b54_qezl6e.jpg"
           alt="vaughn dalde"
         />
