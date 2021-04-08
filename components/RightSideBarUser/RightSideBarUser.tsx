@@ -1,12 +1,12 @@
 import { useQuery } from "@apollo/client";
 import { Avatar, UserListPlaceholder } from "@components/common";
-import { USERS } from "@lib/tags";
+import { USERS, UsersData, UsersVar } from "@lib/tags";
 import s from "./RightSideBarUser.module.css";
 
 const NUMBEROFUSERS = 7;
 
 const RightSideBarUser = () => {
-  const { data, loading, error } = useQuery(USERS, {
+  const { data, loading, error } = useQuery<UsersData, UsersVar>(USERS, {
     variables: {
       page: 10,
       limit: NUMBEROFUSERS,

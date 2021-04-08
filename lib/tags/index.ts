@@ -1,4 +1,5 @@
 import gql from "graphql-tag";
+import { PostType, UserType } from "@lib/types";
 
 export const USER = gql`
   query getUser($id: String!) {
@@ -12,6 +13,10 @@ export const USER = gql`
     }
   }
 `;
+
+export interface UserVar {
+  id: string;
+}
 
 export const USERS = gql`
   query getUsers($page: Int!, $limit: Int!) {
@@ -31,6 +36,21 @@ export const USERS = gql`
     }
   }
 `;
+
+export interface UsersData {
+  users: {
+    data: UserType[];
+    limit: number;
+    offset: number;
+    page: number;
+    total: number;
+  };
+}
+
+export interface UsersVar {
+  page: number;
+  limit?: number;
+}
 
 export const POST = gql`
   query getPost($id: String!) {
@@ -81,3 +101,18 @@ export const POSTS = gql`
     }
   }
 `;
+
+export interface PostsData {
+  posts: {
+    data: PostType[];
+    limit: number;
+    offset: number;
+    page: number;
+    total: number;
+  };
+}
+
+export interface PostsVar {
+  page: number;
+  limit?: number;
+}
