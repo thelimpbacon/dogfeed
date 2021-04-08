@@ -44,7 +44,12 @@ const UserFeed = ({ userId }: { userId: string }) => {
         return <Post key={post.id} post={post} />;
       })}
       <div ref={ref} className="h-[40vh] w-full flex justify-center">
-        <PostPlaceholder />
+        {data?.postsByUser.total >=
+        data.postsByUser.limit * data.postsByUser.page ? (
+          <PostPlaceholder />
+        ) : (
+          <h2 className="mt-4 text-xl">Nothing more to load</h2>
+        )}
       </div>
     </div>
   );
