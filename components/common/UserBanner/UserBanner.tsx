@@ -3,6 +3,7 @@ import { USERFULL, UserFullData, UserVar } from "@lib/tags";
 import { format } from "timeago.js";
 import { Avatar } from "..";
 import UserBannerPlaceholder from "../UserBannerPlaceholder";
+import cn from "classnames";
 import s from "./UserBanner.module.css";
 
 const UserBanner = ({ userId }: { userId: string }) => {
@@ -12,6 +13,17 @@ const UserBanner = ({ userId }: { userId: string }) => {
 
   if (loading) {
     return <UserBannerPlaceholder />;
+  }
+
+  if (error) {
+    return (
+      <div className={s.root}>
+        <div className={s.head}>
+          <p className="text-lg">😞 Error loading user</p>
+        </div>
+        <div className={cn(s.rest, "h-[9em]")}></div>
+      </div>
+    );
   }
 
   return (

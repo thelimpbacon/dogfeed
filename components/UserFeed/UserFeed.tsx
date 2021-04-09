@@ -5,11 +5,12 @@ import { POSTSBYUSER, PostsByUserVar, PostsByUserData } from "@lib/tags";
 import { Post, PostPlaceholder } from "@components/common";
 
 const UserFeed = ({ userId }: { userId: string }) => {
-  const { data, loading, error, fetchMore } = useQuery<
+  const { data, loading, error, fetchMore, refetch, networkStatus } = useQuery<
     PostsByUserData,
     PostsByUserVar
   >(POSTSBYUSER, {
     variables: { userId, page: 0, limit: 5 },
+    notifyOnNetworkStatusChange: true,
   });
 
   const [ref, inView] = useInView({
@@ -24,16 +25,26 @@ const UserFeed = ({ userId }: { userId: string }) => {
     }
   }, [inView]);
 
-  if (error) {
-    return <div className="min-h-screen">An error occured.</div>;
-  }
-
-  if (loading) {
+  if ((loading && networkStatus === 4) || (loading && networkStatus === 1)) {
     return (
       <div className="flex flex-col items-center min-h-screen">
         <PostPlaceholder />
         <PostPlaceholder />
         <PostPlaceholder />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex flex-col items-center min-h-screen">
+        <h5 className="text-lg">😞 An error occured while fetching posts.</h5>
+        <button
+          className="underline focus:outline-none"
+          onClick={() => refetch()}
+        >
+          Try again?
+        </button>
       </div>
     );
   }
