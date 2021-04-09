@@ -9,7 +9,6 @@ interface DarkModeToggleProps {
 const DarkModeToggle = ({ className }: DarkModeToggleProps) => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
-  console.log(theme);
 
   // Avoid Hydration Mismatch
   // Because we cannot know the theme on the server,
