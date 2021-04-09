@@ -20,9 +20,13 @@
 }
 
 .button {
-  @apply w-full px-4 py-3 my-1 text-left rounded-md focus:outline-none;
+  @apply flex items-center w-full px-4 py-3 my-1 text-left rounded-md focus:outline-none;
 }
 
 .button:hover {
   @apply transition ease-in bg-white bg-opacity-20;
+}
+
+.icon {
+  @apply inline w-6 h-6 mr-4;
 }
