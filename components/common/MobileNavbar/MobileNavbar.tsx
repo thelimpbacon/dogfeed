@@ -36,9 +36,9 @@ const MobileNavbar = () => {
           </a>
         </Link>
 
-        <button className="h-full px-6">
+        <div className="h-full px-6">
           <DarkModeToggle />
-        </button>
+        </div>
       </div>
     </nav>
   );
