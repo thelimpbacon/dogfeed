@@ -20,6 +20,7 @@
     "timeago.js": "^4.0.2"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.11",
     "@types/lodash.isequal": "^4.5.5",
     "@types/react": "^17.0.3",
     "autoprefixer": "^10.2.5",
