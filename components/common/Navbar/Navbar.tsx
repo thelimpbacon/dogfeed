@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { DarkModeToggle } from "..";
 import s from "./Navbar.module.css";
 
 const Navbar = () => {
@@ -7,6 +8,9 @@ const Navbar = () => {
       <Link href="/">
         <a>Navbar</a>
       </Link>
+      <div className="ml-auto">
+        <DarkModeToggle />
+      </div>
     </div>
   );
 };

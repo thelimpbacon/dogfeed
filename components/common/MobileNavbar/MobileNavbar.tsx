@@ -2,7 +2,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import cn from "classnames";
 import s from "./MobileNavbar.module.css";
-import { Dark, Home, Profile, Users } from "@components/common/Icons";
+import { Home, Profile, Users } from "@components/common/Icons";
+import { DarkModeToggle } from "@components/common";
 
 const MobileNavbar = () => {
   const { pathname } = useRouter();
@@ -35,8 +36,8 @@ const MobileNavbar = () => {
           </a>
         </Link>
 
-        <button className="h-full px-6 ">
-          <Dark />
+        <button className="h-full px-6">
+          <DarkModeToggle />
         </button>
       </div>
     </nav>
