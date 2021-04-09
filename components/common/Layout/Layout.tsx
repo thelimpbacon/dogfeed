@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
-import Footer from "@components/common/Footer";
-import Navbar from "@components/common/Navbar";
+import { Navbar, MobileNavbar } from "@components/common/";
 import s from "./Layout.module.css";
 
 interface Props {
@@ -12,7 +11,7 @@ const Layout = ({ children }: Props) => {
     <div className={s.root}>
       <Navbar />
       <section className={s.content}>{children}</section>
-      {/* <Footer /> */}
+      <MobileNavbar />
     </div>
   );
 };

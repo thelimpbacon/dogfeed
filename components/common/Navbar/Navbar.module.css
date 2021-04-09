@@ -3,5 +3,5 @@
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(10.5px);
   -webkit-backdrop-filter: blur(10.5px);
-  @apply flex h-[4em] items-center sticky px-2 top-0 mb-[2rem] z-50;
+  @apply h-[4em] items-center sticky px-2 top-0 mb-[2rem] z-50 hidden md:flex;
 }
