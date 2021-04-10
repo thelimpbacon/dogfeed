@@ -1,13 +1,13 @@
 .root {
-  @apply w-full lg:w-[90%] mb-4 min-h-[30rem] bg-gray-300 rounded-lg flex flex-col bg-opacity-60;
+  @apply w-full lg:w-[90%] mb-4 min-h-[30rem] bg-gray-300  sm:rounded-md md:rounded-lg flex flex-col bg-opacity-60;
 }
 
 .topInfo {
-  @apply px-2 pt-4 pb-2 mb-auto bg-white rounded-t-lg;
+  @apply px-2 pt-4 pb-2 mb-auto bg-white sm:rounded-t-md md:rounded-t-lg;
 }
 
 .bottomInfo {
-  @apply h-[4rem] bg-white rounded-b-lg mt-auto flex px-2 pt-4 pb-2 items-center;
+  @apply h-[4rem] bg-white sm:rounded-b-md md:rounded-b-lg mt-auto flex px-2 pt-4 pb-2 items-center;
 }
 
 .tagPill {

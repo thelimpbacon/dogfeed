@@ -3,8 +3,7 @@
   box-shadow: var(--boxShadow);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
-  @apply w-full lg:w-[90%] mb-4 min-h-[10em];
+  @apply w-full lg:w-[90%] mb-4 min-h-[10em] sm:rounded-md md:rounded-lg;
 }
 
 [class="light"] .root {
@@ -12,28 +11,19 @@
 }
 
 .topInfo {
-  border-radius: 10px 10px 0 0;
-  @apply px-2 pt-4 pb-2 bg-white;
+  @apply px-2 pt-4 pb-2 bg-white sm:rounded-t-md md:rounded-t-lg;
 }
 
 .postText {
-  @apply text-sm;
+  @apply text-base;
 }
 
 .postText::first-letter {
   @apply capitalize;
 }
 
-.user::before {
-  content: "@";
-}
-
-.imageContainer {
-}
-
 .bottomInfo {
-  border-radius: 0 0 10px 10px;
-  @apply flex px-2 py-4 bg-white;
+  @apply flex px-2 py-4 bg-white sm:rounded-t-md md:rounded-b-lg;
 }
 
 .tagPill {

@@ -27,7 +27,7 @@ const Feed = () => {
 
   if ((loading && networkStatus === 4) || (loading && networkStatus === 1)) {
     return (
-      <div className="flex flex-col items-center min-h-screen">
+      <div className="flex flex-col items-center min-h-screen py-2 md:py-0">
         <PostPlaceholder />
         <PostPlaceholder />
         <PostPlaceholder />
@@ -37,7 +37,7 @@ const Feed = () => {
 
   if (error) {
     return (
-      <div className="flex flex-col items-center min-h-screen">
+      <div className="flex flex-col items-center min-h-screen py-2 mt-4 md:py-0">
         <h5 className="text-lg">😞 An error occured while fetching posts.</h5>
         <button
           className="underline focus:outline-none"
@@ -50,7 +50,7 @@ const Feed = () => {
   }
 
   return (
-    <div className="flex flex-col items-center overflow-hidden">
+    <div className="flex flex-col items-center py-2 overflow-hidden md:py-0">
       {data?.posts?.data?.map((post) => {
         return <Post key={post.id} post={post} />;
       })}
