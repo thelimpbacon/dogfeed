@@ -9,12 +9,15 @@ const MobileNavbar = () => {
   const { pathname } = useRouter();
 
   return (
-    <nav className={s.root}>
+    <nav className={cn(s.root, "dark:border-gray-600 dark:border-t-[1px]")}>
       <div className="flex items-center justify-between flex-1 h-full">
         <Link href="/">
           <a className="h-full">
             <button
-              className={cn("h-full px-6", { "bg-blue-100": pathname === "/" })}
+              className={cn("h-full px-6", {
+                "bg-blue-100 dark:bg-gray-200 dark:bg-opacity-20":
+                  pathname === "/",
+              })}
             >
               <Home />
             </button>
@@ -28,7 +31,8 @@ const MobileNavbar = () => {
           <a className="h-full">
             <button
               className={cn("h-full px-6", {
-                "bg-blue-100": pathname === "/users",
+                "bg-blue-100 dark:bg-gray-200 dark:bg-opacity-20":
+                  pathname === "/users",
               })}
             >
               <Users />
@@ -36,7 +40,7 @@ const MobileNavbar = () => {
           </a>
         </Link>
 
-        <div className="h-full px-6">
+        <div className="flex items-center h-full px-6">
           <DarkModeToggle />
         </div>
       </div>

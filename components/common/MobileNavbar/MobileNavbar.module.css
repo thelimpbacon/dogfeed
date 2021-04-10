@@ -1,7 +1,16 @@
 .root {
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 -8px 32px 0 rgba(31, 38, 135, 0.37);
+  background: var(--backgroundColor);
+  box-shadow: var(var(--boxShadow));
   backdrop-filter: blur(10.5px);
   -webkit-backdrop-filter: blur(10.5px);
   @apply h-[4em] items-center px-2 flex sticky bottom-0 md:hidden;
+}
+
+[class="dark"] .root {
+  --backgroundColor: rgba(33, 31, 31, 1);
+}
+
+[class="light"] .root {
+  --backgroundColor: rgba(255, 255, 255, 1);
+  --boxShadow: 0 -8px 32px 0 rgba(31, 38, 135, 0.37);
 }

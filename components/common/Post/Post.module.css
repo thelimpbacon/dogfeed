@@ -1,10 +1,14 @@
 .root {
   background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  box-shadow: var(--boxShadow);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
   @apply w-full lg:w-[90%] mb-4 min-h-[10em];
+}
+
+[class="light"] .root {
+  --boxShadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 
 .topInfo {

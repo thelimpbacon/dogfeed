@@ -18,7 +18,7 @@ const RightSideBarUser = () => {
   if (loading) {
     return (
       <div className={s.root}>
-        <h5 className={s.title}>Top users</h5>
+        <h5 className={cn(s.title, "dark:bg-gray-700")}>Top users</h5>
         <div className="px-6 py-2">
           <ul>
             {[...Array(NUMBEROFUSERS)].map((_, index) => (
@@ -35,7 +35,7 @@ const RightSideBarUser = () => {
   if (error) {
     return (
       <div className={cn(s.root, "h-[20em]")}>
-        <h5 className={s.title}>Top users</h5>
+        <h5 className={cn(s.title, "dark:bg-gray-700")}>Top users</h5>
         <p className="px-6 py-2">😞 Error loading users.</p>
       </div>
     );
@@ -43,12 +43,12 @@ const RightSideBarUser = () => {
 
   return (
     <div className={s.root}>
-      <h5 className={s.title}>Top users</h5>
-      <div className="px-6 py-2">
+      <h5 className={cn(s.title, "dark:bg-gray-700")}>Top users</h5>
+      <div className="px-6 pt-2 pb-4">
         <ul>
           {data?.users?.data.map((user) => {
             return (
-              <li key={user.id} className="flex items-center">
+              <li key={user.id} className="flex items-center my-2">
                 <Avatar
                   className="inline w-10 h-10 border-2 rounded-full"
                   src={user.picture}
