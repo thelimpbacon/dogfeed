@@ -9,3 +9,4 @@ export { default as UserBanner } from "./UserBanner";
 export { default as UserBannerPlaceholder } from "./UserBannerPlaceholder";
 export { default as MobileNavbar } from "./MobileNavbar";
 export { default as DarkModeToggle } from "./DarkModeToggle";
+export { default as UserBannerMobile } from "./UserBannerMobile";

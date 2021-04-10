@@ -1,4 +1,4 @@
-import { UserBanner } from "@components/common";
+import { UserBanner, UserBannerMobile } from "@components/common";
 import UserFeed from "@components/UserFeed";
 
 const User = ({ uid }: { uid: string }) => {
@@ -10,6 +10,7 @@ const User = ({ uid }: { uid: string }) => {
         </div>
       </aside>
       <div className="w-full col-span-4 lg:col-span-2">
+        <UserBannerMobile userId={uid} />
         <UserFeed userId={uid} />
       </div>
     </div>
