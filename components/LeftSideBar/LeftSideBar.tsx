@@ -1,5 +1,5 @@
 import { Avatar } from "@components/common";
-import Image from "next/image";
+import { useTheme } from "next-themes";
 import cn from "classnames";
 import s from "./LeftSideBar.module.css";
 import {
@@ -11,6 +11,7 @@ import {
 } from "@components/common/Icons";
 
 const LeftSideBar = () => {
+  const { theme } = useTheme();
   return (
     <div className={s.root}>
       <div className={s.user}>

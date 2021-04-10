@@ -3,12 +3,13 @@ import { PostType } from "@lib/types";
 import { Avatar } from "@components/common";
 import { format } from "timeago.js";
 import s from "./Post.module.css";
+import cn from "classnames";
 import Link from "next/link";
 
 const Post = ({ post }: { post: PostType }) => {
   return (
     <div className={s.root}>
-      <div className={s.topInfo}>
+      <div className={cn(s.topInfo, "dark:bg-black dark:bg-opacity-40")}>
         <Link href={`/user/${post.owner.id}`}>
           <a>
             <div className="flex items-center mb-2">
@@ -34,7 +35,7 @@ const Post = ({ post }: { post: PostType }) => {
           layout="responsive"
         />
       </div>
-      <div className={s.bottomInfo}>
+      <div className={cn(s.bottomInfo, "dark:bg-black dark:bg-opacity-40")}>
         <span className="flex items-center">
           <svg
             className="inline w-6 h-6 mr-1 text-red-500"
@@ -55,7 +56,10 @@ const Post = ({ post }: { post: PostType }) => {
         <span className="ml-auto">
           {post.tags.map((tag, index) => {
             return (
-              <span className={s.tagPill} key={`${tag}-${index}`}>
+              <span
+                className={cn(s.tagPill, "dark:bg-gray-300")}
+                key={`${tag}-${index}`}
+              >
                 {tag}
               </span>
             );

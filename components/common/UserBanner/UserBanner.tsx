@@ -19,7 +19,7 @@ const UserBanner = ({ userId }: { userId: string }) => {
     return (
       <div className={s.root}>
         <div className={s.head}>
-          <p className="text-lg">😞 Error loading user</p>
+          <p className="text-lg dark:text-black">😞 Error loading user</p>
         </div>
         <div className={cn(s.rest, "h-[9em]")}></div>
       </div>
