@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Fira";
+  font-style: normal;
+  font-weight: 800;
+  src: url("/fonts/fira-sans/fira-sans-v11-latin-800.woff2") format("woff2"),
+    url("/fonts/fira-sans/fira-sans-v11-latin-800.woff") format("woff");
+}
