@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import cn from "classnames";
 import s from "./MobileNavbar.module.css";
-import { Home, Profile, Users } from "@components/common/Icons";
+import { Github, Home, Users } from "@components/common/Icons";
 import { DarkModeToggle } from "@components/common";
 
 const MobileNavbar = () => {
@@ -23,9 +23,6 @@ const MobileNavbar = () => {
             </button>
           </a>
         </Link>
-        <button className="px-6">
-          <Profile />
-        </button>
 
         <Link href="/users">
           <a className="h-full">
@@ -39,6 +36,12 @@ const MobileNavbar = () => {
             </button>
           </a>
         </Link>
+
+        <button className="px-6">
+          <a href="https://github.com/thelimpbacon/dogfeed" target="_blank">
+            <Github className="w-6 h-6 dark:text-gray-50" />
+          </a>
+        </button>
 
         <div className="flex items-center h-full px-6">
           <DarkModeToggle />

@@ -3,7 +3,7 @@
   box-shadow: var(--boxShadow);
   backdrop-filter: blur(10.5px);
   -webkit-backdrop-filter: blur(10.5px);
-  @apply h-[4em] items-center sticky px-8 top-0 mb-[2rem] z-50 hidden md:flex;
+  @apply h-[4em] items-center sticky px-8 top-0 mb-[2rem] z-50 hidden md:flex md:justify-between;
 }
 
 [class="light"] .root {
