@@ -1,12 +1,13 @@
-import { ReactNode, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { Dark, Light } from "../Icons";
+import cn from "classnames";
 
 interface DarkModeToggleProps {
   className?: string;
 }
 
-const DarkModeToggle = ({ className }: DarkModeToggleProps) => {
+const DarkModeToggle = ({ className = "w-8 h-8" }: DarkModeToggleProps) => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -26,11 +27,11 @@ const DarkModeToggle = ({ className }: DarkModeToggleProps) => {
   };
 
   return (
-    <button className="focus:outline-none" onClick={onToggle}>
-      {theme === "dark" ? (
-        <Dark className={className} />
+    <button className="w-full h-full focus:outline-none" onClick={onToggle}>
+      {theme !== "dark" ? (
+        <Dark className={cn(className, "mx-auto")} />
       ) : (
-        <Light className={className} />
+        <Light className={cn(className, "mx-auto")} />
       )}
     </button>
   );

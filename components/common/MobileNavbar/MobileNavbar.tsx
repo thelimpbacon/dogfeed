@@ -10,40 +10,36 @@ const MobileNavbar = () => {
 
   return (
     <nav className={cn(s.root, "dark:border-gray-600 dark:border-t-[1px]")}>
-      <div className="flex items-center justify-between flex-1 h-full">
+      <div className={s.navButtonContainer}>
         <Link href="/">
-          <a className="h-full">
-            <button
-              className={cn("h-full px-6", {
-                "bg-blue-100 dark:bg-gray-200 dark:bg-opacity-20":
-                  pathname === "/",
-              })}
-            >
-              <Home />
-            </button>
+          <a
+            className={cn(s.navButton, {
+              "text-blue-400": pathname === "/",
+            })}
+          >
+            <Home />
           </a>
         </Link>
 
         <Link href="/users">
-          <a className="h-full">
-            <button
-              className={cn("h-full px-6", {
-                "bg-blue-100 dark:bg-gray-200 dark:bg-opacity-20":
-                  pathname === "/users",
-              })}
-            >
-              <Users />
-            </button>
+          <a
+            className={cn(s.navButton, {
+              "text-blue-400": pathname === "/users",
+            })}
+          >
+            <Users />
           </a>
         </Link>
 
-        <button className="px-6">
-          <a href="https://github.com/thelimpbacon/dogfeed" target="_blank">
-            <Github className="w-6 h-6 dark:text-gray-50" />
-          </a>
-        </button>
+        <a
+          className={s.navButton}
+          href="https://github.com/thelimpbacon/dogfeed"
+          target="_blank"
+        >
+          <Github className="w-6 h-6 dark:text-gray-50" />
+        </a>
 
-        <div className="flex items-center h-full px-6">
+        <div className={s.navButton}>
           <DarkModeToggle />
         </div>
       </div>
