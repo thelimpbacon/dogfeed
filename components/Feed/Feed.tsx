@@ -9,7 +9,7 @@ const Feed = () => {
     PostsData,
     PostsVar
   >(POSTS, {
-    variables: { page: 30, limit: 5 },
+    variables: { page: 1, limit: 15 },
     notifyOnNetworkStatusChange: true,
   });
 
