@@ -7,6 +7,10 @@ const Head = () => {
         <title>Dog Feed</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
+          property="og:image"
+          content="https://res.cloudinary.com/mount-then-bike-bohol/image/upload/v1618568978/portfolio/1_chygvi.jpg"
+        />
+        <meta
           name="description"
           content="Mock social media site using data from https://dummyapi.io/"
         />
